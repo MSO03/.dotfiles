@@ -1,17 +1,9 @@
-# Arch Linux Dotfiles by MSO03
+# Arch Linux Dotfiles
 
 Welcome to my Arch Linux dotfiles repository! This collection includes configuration files and scripts for customizing my Arch Linux setup, including the Bash shell, Vim editor, X server, and suckless programs (dmenu, dwm, and st). The repository is designed to make it easy to replicate my Arch Linux environment on other machines.
 
-![Screenshot of My Arch Linux Desktop](screenshot.png)
-
-## Repository Structure
-
-The structure of this repository is organized as follows:
-
-- **`bash/`**: Bash shell configuration files.
-- **`vim/`**: Vim editor configuration files.
-- **`x/`**: X configurations for X server setup.
-- **`suckless/`**: Configuration files and patches for suckless programs (dmenu, dwm, st).
+![Screenshot of My Arch Linux Desktop](sample.png)
+![2nd Screenshot of My Arch Linux Desktop](sample2.png)
 
 ## Usage
 
