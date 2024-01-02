@@ -2,8 +2,8 @@
 
 Welcome to my Arch Linux dotfiles repository! This collection includes configuration files and scripts for customizing my Arch Linux setup, including the Bash shell, Vim editor, X server, and suckless programs (dmenu, dwm, and st). The repository is designed to make it easy to replicate my Arch Linux environment on other machines.
 
-![Screenshot of My Arch Linux Desktop](sample.png)
-![2nd Screenshot of My Arch Linux Desktop](sample2.png)
+![Screenshot of My Arch Linux Desktop](sample.jpg)
+![2nd Screenshot of My Arch Linux Desktop](sample2.jpg)
 
 ## Usage
 
