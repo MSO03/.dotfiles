@@ -2,7 +2,7 @@ xrandr --output HDMI1 --gamma .3:.3:.3
 gcc -o hello_world $(pkg-config --cflags --libs gtk4) hello_world.c
 xrandr --output HDMI1 --brightness .5
 patch -p1 < path/to/patch.diff
-
+xwallpaper --zoom background.png
 
 for chanign mouse speed: use xinput -list first:
 xinput --set-prop 4 'Coordinate Transformation Matrix' 6 0 0 0 6 0 0 0 1
