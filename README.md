@@ -40,9 +40,5 @@ This repository includes configurations and patches for the following suckless p
 ## Patches
 
 The suckless programs come with additional patches to enhance functionality. Check the respective `patches/` folder in each of the suckless programs for more information.
-
-
-
-```
-
+___
 Feel free to customize these dotfiles according to your preferences and share your improvements!
