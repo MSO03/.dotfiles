@@ -12,19 +12,19 @@ To use these dotfiles on your Arch Linux machine:
 1. Clone the repository:
 
    ```bash
-   git clone git@github.com:MSO03/.dotfiles.git
+   git clone git@github.com:MSO03/.dotfiles.git ~/dotfiles
    ```
 
 2. Navigate to the dotfiles directory:
 
    ```bash
-   cd arch-dotfiles
+   cd dotfiles
    ```
 
 3. Use a tool like GNU Stow to create symbolic links for the desired configurations:
 
    ```bash
-   stow bash vim x suckless
+   stow -vt bash vim x suckless
    ```
 
    This will create symlinks for the Bash, Vim, Xinitrc, and suckless program configurations in your home directory.
