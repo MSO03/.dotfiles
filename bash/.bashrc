@@ -15,3 +15,9 @@ pdf(){
 	pdflatex -output-directory pdfs "$1"
 	rm pdfs/template.log #Not working for some reason
 }
+xrandr --output HDMI1 --brightness .5
+setxkbmap -option
+
+export PATH=/usr/local/bin:$PATH
+#need to add shims to the path
+eval "$(pyenv init -)"

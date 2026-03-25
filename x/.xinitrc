@@ -11,4 +11,5 @@ xcompmgr -c &
 
 # Launch dwm as the main window manager
 exec dwm
+ 
 
