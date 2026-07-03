@@ -8,3 +8,4 @@ set autoindent
 set wildmode=longest,list,full
 set splitbelow splitright
 :tabdo windo set ruler
+:set expandtab  " turns tabs into spaces
