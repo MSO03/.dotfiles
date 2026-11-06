@@ -52,8 +52,8 @@ augroup writing_settings
     autocmd FileType markdown,text,tex setlocal wrap
     autocmd FileType markdown,text,tex setlocal linebreak
     autocmd FileType markdown,text,tex setlocal breakindent
-    autocmd FileType markdown,text,tex setlocal spell
-    autocmd FileType markdown,text,tex setlocal spelllang=en_us
+   " autocmd FileType markdown,text,tex setlocal spell
+   " autocmd FileType markdown,text,tex setlocal spelllang=en_us
     autocmd FileType markdown,text,tex setlocal nonumber
     autocmd FileType markdown,text,tex setlocal norelativenumber
     autocmd FileType markdown,text,tex setlocal textwidth=0
@@ -64,3 +64,7 @@ augroup END
 " ==========================================
 
 let g:limelight_conceal_ctermfg = 240
+
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!

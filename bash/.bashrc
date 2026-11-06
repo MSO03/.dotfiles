@@ -1,5 +1,4 @@
 set -o vi
-unclutter &
 #aliases not inherited by child processes so does not go in .bash_profile
 alias firefox="nohup firefox 2> /dev/null &
 rm nohup.out"
@@ -19,9 +18,10 @@ pdf(){
 	pdflatex -output-directory pdfs "$1"
 	rm pdfs/template.log #Not working for some reason
 }
-xrandr --output HDMI1 --brightness .5
-setxkbmap -option
+# setxkbmap -option
 
-export PATH=/usr/local/bin:$PATH
-#need to add shims to the path
+export PATH=/usr/local/bin:$PATH #need to add shims to the path
+
+export PATH="$HOME/.scripts/:$PATH"
+
 eval "$(pyenv init -)"
