@@ -247,7 +247,7 @@ static char *usedfont = NULL;
 static double usedfontsize = 0;
 static double defaultfontsize = 0;
 
-static char *opt_alpha = NULL;
+
 static char *opt_class = NULL;
 static char **opt_cmd  = NULL;
 static char *opt_embed = NULL;
@@ -256,6 +256,7 @@ static char *opt_io    = NULL;
 static char *opt_line  = NULL;
 static char *opt_name  = NULL;
 static char *opt_title = NULL;
+
 
 static uint buttons; /* bit field of pressed buttons */
 
@@ -818,22 +819,10 @@ xloadcols(void)
 				die("could not allocate color %d\n", i);
 		}
 
-	/* set alpha value of bg color */
-	if (opt_alpha)
-		alpha = strtof(opt_alpha, NULL);
-
-	Color *c = &dc.col[defaultbg];
-	c->color.red   *= alpha;
-	c->color.green *= alpha;
-	c->color.blue  *= alpha;
-	c->color.alpha = (unsigned short)(0xffff * alpha);
-
-	c->pixel = \
-		(unsigned char)(0xff * alpha) << 24 \
-		+ ((unsigned char)(c->color.red / 0xffff.0p0 * 0xff) << 16) \
-		+ ((unsigned char)(c->color.green / 0xffff.0p0 * 0xff) << 8) \
-		+ (unsigned char)(c->color.blue / 0xffff.0p0 * 0xff);
-
+    /* set alpha value of bg color */
+        dc.col[defaultbg].color.alpha = (unsigned short)(0xffff * alpha);
+        dc.col[defaultbg].pixel &= 0x00FFFFFF;
+        dc.col[defaultbg].pixel |= (unsigned char)(0xff * alpha) << 24;
 	loaded = 1;
 }
 
@@ -860,11 +849,16 @@ xsetcolorname(int x, const char *name)
 
 	if (!xloadcolor(x, name, &ncolor))
 		return 1;
+    XftColorFree(xw.dpy, xw.vis, xw.cmap, &dc.col[x]);
+    dc.col[x] = ncolor;
 
-	XftColorFree(xw.dpy, xw.vis, xw.cmap, &dc.col[x]);
-	dc.col[x] = ncolor;
+    if (x == defaultbg) {
+        dc.col[defaultbg].color.alpha = (unsigned short)(0xffff * alpha);
+        dc.col[defaultbg].pixel &= 0x00FFFFFF;
+        dc.col[defaultbg].pixel |= (unsigned char)(0xff * alpha) << 24;
+    }
 
-	return 0;
+    return 0;
 }
 
 /*
@@ -2109,9 +2103,10 @@ main(int argc, char *argv[])
 	case 'a':
 		allowaltscreen = 0;
 		break;
-	case 'A':
-		opt_alpha = EARGF(usage());
-		break;
+    case 'A':
+        alpha = strtof(EARGF(usage()), NULL);
+        LIMIT(alpha, 0.0, 1.0);
+        break;
 	case 'c':
 		opt_class = EARGF(usage());
 		break;

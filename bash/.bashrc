@@ -25,3 +25,7 @@ export PATH=/usr/local/bin:$PATH #need to add shims to the path
 export PATH="$HOME/.scripts/:$PATH"
 
 eval "$(pyenv init -)"
+
+
+
+wallust run -u --ignore-sequence background "$HOME/wallpapers/house.jpg" 
