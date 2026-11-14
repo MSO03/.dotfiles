@@ -68,3 +68,6 @@ let g:limelight_conceal_ctermfg = 240
 
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" Toggle Goyo writing mode
+nnoremap <silent> <leader>gy :Goyo<CR>

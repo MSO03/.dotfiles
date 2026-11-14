@@ -27,5 +27,5 @@ export PATH="$HOME/.scripts/:$PATH"
 eval "$(pyenv init -)"
 
 
-
-wallust run -u --ignore-sequence background "$HOME/wallpapers/house.jpg" 
+wallpaper=$(cat $HOME/.config/wallust/current_wallpaper/wallpaper_path)
+wallust run $wallpaper 
